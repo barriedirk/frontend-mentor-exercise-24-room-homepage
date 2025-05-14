@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../base//utilities" as *;
+@use "../components/link" as *;
+@use "../components/logo" as *;
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: $clr-black;
+  padding: rem(50) rem(24);
+
+  & > div {
+    @include flexColumnCenter;
+    gap: rem(40);
+  }
+
+  a {
+    @extend %link-underline-hover;
+  }
+
+  &__logo {
+    @extend %logo-image;
+  }
+
+  &__top {
+    @include flexColumnCenter;
+    gap: rem(40);
+  }
+
+  &__nav-list {
+    list-style: none;
+    @include flexColumnCenter;
+    gap: rem(20);
+  }
+
+  &__social-networks {
+    @include flexRowCenter;
+    gap: rem(10);
+  }
+
+  &__bottom {
+    @include flexColumnCenter;
+    gap: rem(20);
+  }
+
+  &__copyright,
+  &__attribution {
+    line-height: 1.5;
+    color: $clr-grey-200;
+  }
+
+  &__attribution {
+    margin-top: rem(-10);
+    font-size: rem(10);
+    text-align: center;
+  }
+
+  @include respondMinWidth(phone) {
+    & > div {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: rem(10);
+    }
+
+    &__top {
+      align-items: flex-start;
+    }
+
+    &__nav-list {
+      @include flexRowCenter;
+    }
+
+    &__social-networks {
+      gap: rem(20);
+    }
+
+    &__bottom {
+      align-items: flex-end;
+    }
+  }
+}

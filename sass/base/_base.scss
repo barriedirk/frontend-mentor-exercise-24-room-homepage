@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    flex: 0 0 auto;
+  }
+}

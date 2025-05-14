@@ -1,0 +1,135 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@use "../base/utilities" as *;
+
+@use "../components/link" as *;
+@use "../components/logo" as *;
+
+.header {
+  position: relative;
+  height: rem(650);
+  width: 100%;
+  padding: rem(40) rem(18);
+  color: $clr-white;
+  transition: 0.4s;
+
+  background-color: $clr-black;
+  background-image: url("./images/mobile/image-header.jpg");
+  @include bck-cover;
+
+  &__title {
+    font-size: rem(40);
+    line-height: 0.95;
+    text-transform: uppercase;
+    font-weight: $fw-light;
+    border: 1px solid $clr-white;
+    padding: 2.1rem;
+    width: calc(100% - #{rem(36)});
+    width: 100%;
+    max-width: rem(650);
+    @include absCenterY;
+    z-index: 1;
+  }
+
+  &__logo {
+    @extend %logo-image;
+    z-index: 10;
+  }
+
+  &__nav-button {
+    position: relative;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    width: rem(24);
+    height: rem(18);
+    background-image: url("./images/icon-hamburger.svg");
+    @include bck-contain;
+  }
+
+  &__nav-options {
+    @include flexColumnCenter;
+    align-items: flex-start;
+    gap: rem(24);
+
+    display: none;
+    font-size: rem(24);
+    line-height: 1.04166666667;
+    z-index: 10;
+    position: relative;
+    text-transform: uppercase;
+
+    & a {
+      @extend %link-underline-hover;
+    }
+  }
+
+  &__nav-wrapper::before {
+    opacity: 0;
+    transform: translateY(rem(-10));
+    transition: opacity 0.3s ease, transform 1s ease;
+  }
+
+  @include respondMaxWidth(phone) {
+    &__nav-wrapper.is-open::before {
+      content: "";
+      inset: 0;
+      position: fixed;
+      background-color: $clr-black;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .is-open &__nav-options {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .is-open &__nav-button {
+      width: rem(20);
+      height: rem(20);
+      background-image: url("./images/icon-close.svg");
+    }
+
+    &__nav-wrapper.is-open .header__nav-options {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include respondMinWidth(phone) {
+    background-image: url("./images/desktop/image-header.jpg");
+
+    &__nav-button {
+      display: none;
+    }
+
+    &__nav-options {
+      flex-direction: row;
+      font-size: rem(15);
+      line-height: 1.6666666667;
+      align-items: center;
+      gap: 2.4rem;
+      text-transform: initial;
+      opacity: 1;
+      display: flex;
+    }
+
+    &__title {
+      font-size: rem(72);
+      line-height: 0.9722222222;
+    }
+
+    &__nav-options a::before {
+      bottom: rem(-10);
+    }
+  }
+}
