@@ -2,25 +2,9 @@
 @use "../abstracts/variables" as *;
 
 body {
-  font-family: $ff-alata;
+  font-family: $ff;
   font-weight: $fw-normal;
   font-size: rem($default-font-size);
   line-height: 1.5;
   color: $clr-black;
-}
-
-.header {
-  font-family: $ff-alata;
-
-  &__nav-options,
-  &__title {
-    font-family: $ff-josefina;
-    font-weight: $fw-light;
-  }
-}
-
-.footer {
-  font-family: $ff-alata;
-  font-size: rem(15);
-  color: $clr-white;
 }

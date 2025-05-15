@@ -14,20 +14,21 @@
 
 // layout
 @use "layout/header";
-@use "layout/grid";
-@use "layout/footer";
+// @use "layout/grid";
+// @use "layout/footer";
 
 // components
-@use "components/button";
-@use "components/card";
+@use "components/hero";
+// @use "components/button";
+// @use "components/card";
 
 // pages
-@use "pages/home";
+// @use "pages/home";
 
 // themes
-@use "themes/dark";
-@use "themes/light";
+// @use "themes/dark";
+// @use "themes/light";
 
 // vendors
-@use "vendors/bootstrap";
-@use "vendors/swiper";
+// @use "vendors/bootstrap";
+// @use "vendors/swiper";

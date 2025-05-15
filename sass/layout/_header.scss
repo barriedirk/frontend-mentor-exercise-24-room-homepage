@@ -7,129 +7,91 @@
 @use "../components/link" as *;
 @use "../components/logo" as *;
 
-.header {
-  position: relative;
-  height: rem(650);
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: rem(110);
   width: 100%;
-  padding: rem(40) rem(18);
-  color: $clr-white;
-  transition: 0.4s;
+  padding: 0 rem(20);
+  @include flexRowCenter;
 
-  background-color: $clr-black;
-  background-image: url("./images/mobile/image-header.jpg");
-  @include bck-cover;
-
-  &__title {
-    font-size: rem(40);
-    line-height: 0.95;
-    text-transform: uppercase;
-    font-weight: $fw-light;
-    border: 1px solid $clr-white;
-    padding: 2.1rem;
-    width: calc(100% - #{rem(36)});
-    width: 100%;
-    max-width: rem(650);
-    @include absCenterY;
-    z-index: 1;
-  }
-
-  &__logo {
-    @extend %logo-image;
-    z-index: 10;
-  }
-
-  &__nav-button {
-    position: relative;
-    z-index: 10;
-    border: none;
-    background-color: transparent;
-    width: rem(24);
-    height: rem(18);
-    background-image: url("./images/icon-hamburger.svg");
-    @include bck-contain;
-  }
-
-  &__nav-options {
-    @include flexColumnCenter;
-    align-items: flex-start;
-    gap: rem(24);
-
+  &__toggle {
     display: none;
-    font-size: rem(24);
-    line-height: 1.04166666667;
-    z-index: 10;
-    position: relative;
-    text-transform: uppercase;
+  }
 
-    & a {
-      @extend %link-underline-hover;
+  &__navigation {
+    @include flexRowCenter;
+    gap: rem(30);
+  }
+
+  &__list {
+    list-style-type: none;
+    @include flexRowCenter();
+    gap: rem(5);
+    color: $clr-white;
+  }
+
+  a {
+    position: relative;
+    color: currentColor;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 2px;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s;
+    }
+
+    &:hover::after {
+      width: 80%;
+      background-color: currentColor;
+      transform: translateX(10%);
     }
   }
 
-  &__nav-wrapper::before {
-    opacity: 0;
-    transform: translateY(rem(-10));
-    transition: opacity 0.3s ease, transform 1s ease;
+  &-logo-link {
+    img {
+      width: rem(61);
+      height: rem(13);
+    }
   }
 
   @include respondMaxWidth(phone) {
-    &__nav-wrapper.is-open::before {
-      content: "";
-      inset: 0;
-      position: fixed;
-      background-color: $clr-black;
-      width: 100%;
-      height: 100%;
-      z-index: 5;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .is-open &__nav-options {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .is-open &__nav-button {
+    &__toggle {
+      display: inline-block;
+      background: transparent;
+      border: none;
       width: rem(20);
-      height: rem(20);
+      height: rem(14);
+      background-image: url("./images/icon-hamburger.svg");
+    }
+
+    &__toggle[aria-expanded="true"] {
       background-image: url("./images/icon-close.svg");
+      width: rem(15);
+      height: rem(15);
     }
 
-    &__nav-wrapper.is-open .header__nav-options {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  @include respondMinWidth(phone) {
-    background-image: url("./images/desktop/image-header.jpg");
-
-    &__nav-button {
+    &__options {
       display: none;
     }
 
-    &__nav-options {
-      flex-direction: row;
-      font-size: rem(15);
-      line-height: 1.6666666667;
-      align-items: center;
-      gap: 2.4rem;
-      text-transform: initial;
-      opacity: 1;
-      display: flex;
-    }
+    &.is-expanded {
+      background-color: $clr-white;
 
-    &__title {
-      font-size: rem(72);
-      line-height: 0.9722222222;
-    }
+      &-logo-link {
+        display: none;
+      }
 
-    &__nav-options a::before {
-      bottom: rem(-10);
+      .menu__list {
+        margin-left: auto;
+        display: flex;
+        color: $clr-black;
+      }
     }
   }
 }

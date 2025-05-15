@@ -1,59 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Room homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Home
-  Shop
-  About
-  Contact
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  Discover innovative ways to decorate
+    <title>Frontend Mentor | Room homepage</title>
 
-  We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
+    <meta name="author" content="Barrie Freyre" />
 
-  Shop now
+    <meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/" />
+    <meta name="github" content="https://github.com/barriedirk" />
+    <meta
+      name="frontendmentor"
+      content="https://www.frontendmentor.io/profile/barriedirk"
+    />
 
-  We are available all across the globe
+    <link rel="me" href="https://www.linkedin.com/in/barriefreyre/" />
+    <link rel="me" href="https://github.com/barriedirk" />
+    <link rel="me" href="https://www.frontendmentor.io/profile/barriedirk" />
 
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Barrie Freyre",
+        "url": "",
+        "sameAs": [
+          "https://www.linkedin.com/in/barriefreyre/",
+          "https://github.com/barriedirk",
+          "https://www.frontendmentor.io/profile/barriedirk"
+        ]
+      }
+    </script>
 
-  Shop now
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  Manufactured with the best materials
+    <title>Frontend Mentor | Loopstudios landing page</title>
 
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
 
-  Shop now
+    <link rel="stylesheet" href="./main.css" />
 
-  About our furniture
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="sr-only">Our Furniture</h1>
+      <header class="menu">
+        <div class="menu__navigation">
+          <button
+            id="menu__toggle"
+            class="menu__toggle"
+            aria-expanded="false"
+            aria-controls="menu__options"
+          >
+            <span class="sr-only">Toggle navigation menu</span>
+          </button>
+          <nav
+            id="menu__options"
+            class="menu__options"
+            aria-label="Main navigation"
+          >
+            <ul class="menu__list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a class="menu-logo-link" href="#">
+          <img
+            class="logo-link-image"
+            src="./images/logo.svg"
+            alt="Room logo"
+          />
+        </a>
+      </header>
+      <section class="hero-images">
+        <div class="hero-image__item" id="hero-image-1">
+          <picture>
+            <source
+              srcset="./images/desktop-image-hero-1.jpg"
+              media="(min-width: 900px)"
+            />
 
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <img
+              src="./images/mobile-image-hero-1.jpg"
+              alt=""
+              aria-labelledby="hero__details--title-1"
+              aria-describedby="hero__details--description-1"
+            />
+          </picture>
+        </div>
+
+        <div class="hero-image__item" id="hero-image-2">
+          <picture>
+            <source
+              srcset="./images/desktop-image-hero-2.jpg"
+              media="(min-width: 900px)"
+            />
+
+            <img
+              src="./images/mobile-image-hero-2.jpg"
+              alt=""
+              aria-labelledby="hero__details--title-2"
+              aria-describedby="hero__details--description-2"
+            />
+          </picture>
+        </div>
+
+        <div class="hero-image__item" id="hero-image-3">
+          <picture>
+            <source
+              srcset="./images/desktop-image-hero-3.jpg"
+              media="(min-width: 900px)"
+            />
+
+            <img
+              src="./images/mobile-image-hero-3.jpg"
+              alt=""
+              aria-labelledby="hero__details--title-3"
+              aria-describedby="hero__details--description-3"
+            />
+          </picture>
+        </div>
+
+        <div class="hero-image__navigation">
+          <button
+            type="button"
+            class="hero-image__navigation-btn hero-image__navigation-btn--prev"
+            aria-label="Previous image"
+          >
+            <img src="./images/icon-angle-left.svg" alt="Previous Slide Icon" />
+          </button>
+
+          <button
+            type="button"
+            class="hero-image__navigation-btn hero-image__navigation-btn--next"
+            aria-label="Next image"
+          >
+            <img src="./images/icon-angle-right.svg" alt="Next Slide Icon" />
+          </button>
+        </div>
+      </section>
+
+      <section class="hero__details">
+        <div id="hero__details--item-1" class="hero__details--item">
+          <h2 id="hero__details--title-1" class="hero__details--title">
+            Discover innovative ways to decorate
+          </h2>
+          <p
+            id="hero__details--description-1"
+            class="hero__details--description"
+          >
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life. Create a room in your own style with
+            our collection and make your property a reflection of you and what
+            you love.
+          </p>
+        </div>
+
+        <div id="hero__details--item-2" class="hero__details--item">
+          <h2 id="hero__details--title-2" class="hero__details--title">
+            We are available all across the globe
+          </h2>
+          <p
+            id="hero__details--description-2"
+            class="hero__details--description"
+          >
+            With stores all over the world, it's easy for you to find furniture
+            for your home or place of business. Locally, we’re in most major
+            cities throughout the country. Find the branch nearest you using our
+            store locator. Any questions? Don't hesitate to contact us today.
+          </p>
+        </div>
+
+        <div id="hero__details--item-3" class="hero__details--item">
+          <h2 id="hero__details--title-3" class="hero__details--title">
+            Manufactured with the best materials
+          </h2>
+          <p
+            id="hero__details--description-3"
+            class="hero__details--description"
+          >
+            Our modern furniture store provide a high level of quality. Our
+            company has invested in advanced technology to ensure that every
+            product is made as perfect and as consistent as possible. With three
+            decades of experience in this industry, we understand what customers
+            want for their home and office.
+          </p>
+        </div>
+
+        <a href="#">Shop now</a>
+      </section>
+
+      <section class="about-us">
+        <img
+          class="about-us--image"
+          src="./images/image-about-dark.jpg"
+          alt="Furniture in an dark environment"
+        />
+        <div class="about-us--description">
+          <h2>About our furniture</h2>
+
+          <p>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+
+        <img
+          class="about-us--image"
+          src="./images/image-about-light.jpg"
+          alt="Furniture in an light environment"
+        />
+      </section>
+    </main>
+    <footer class="footer__attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io/profile/barriedirk/solutions"
+        target="_blank"
+        rel="noopener"
+        aria-label="View solutions by Barrie Freyre on Frontend Mentor"
+      >
+        Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.linkedin.com/in/barriefreyre/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visit Barrie Freyre's LinkedIn profile"
+      >
+        Barrie Freyre</a
+      >.
+    </footer>
+  </body>
 </html>
