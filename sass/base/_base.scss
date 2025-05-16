@@ -1,3 +1,6 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
 html {
   font-size: 100%;
 }
@@ -5,4 +8,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: rem(10);
+}
+
+body > main {
+  max-width: rem(1440);
+  width: 100%;
 }

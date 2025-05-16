@@ -101,149 +101,183 @@
           />
         </a>
       </header>
-      <section class="hero-images">
-        <div class="hero-image__item" id="hero-image-1">
-          <picture>
-            <source
-              srcset="./images/desktop-image-hero-1.jpg"
-              media="(min-width: 900px)"
-            />
 
-            <img
-              src="./images/mobile-image-hero-1.jpg"
-              alt=""
-              aria-labelledby="hero__details--title-1"
-              aria-describedby="hero__details--description-1"
-            />
-          </picture>
+      <section class="hero">
+        <div class="hero-images">
+          <div class="hero-image__item" id="hero-image-1">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-1.jpg"
+                media="(min-width: 900px)"
+              />
+
+              <img
+                src="./images/mobile-image-hero-1.jpg"
+                alt=""
+                aria-labelledby="hero__details--title-1"
+                aria-describedby="hero__details--description-1"
+              />
+            </picture>
+          </div>
+
+          <div class="hero-image__item d-none" id="hero-image-2">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-2.jpg"
+                media="(min-width: 900px)"
+              />
+
+              <img
+                src="./images/mobile-image-hero-2.jpg"
+                alt=""
+                aria-labelledby="hero__details--title-2"
+                aria-describedby="hero__details--description-2"
+              />
+            </picture>
+          </div>
+
+          <div class="hero-image__item d-none" id="hero-image-3">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-3.jpg"
+                media="(min-width: 900px)"
+              />
+
+              <img
+                src="./images/mobile-image-hero-3.jpg"
+                alt=""
+                aria-labelledby="hero__details--title-3"
+                aria-describedby="hero__details--description-3"
+              />
+            </picture>
+          </div>
+
+          <div class="hero-image__navigation">
+            <button
+              type="button"
+              class="hero-image__navigation-btn hero-image__navigation-btn--prev"
+              aria-label="Previous image"
+            >
+              <img
+                src="./images/icon-angle-left.svg"
+                alt="Previous Slide Icon"
+              />
+            </button>
+
+            <button
+              type="button"
+              class="hero-image__navigation-btn hero-image__navigation-btn--next"
+              aria-label="Next image"
+            >
+              <img src="./images/icon-angle-right.svg" alt="Next Slide Icon" />
+            </button>
+          </div>
         </div>
 
-        <div class="hero-image__item" id="hero-image-2">
-          <picture>
-            <source
-              srcset="./images/desktop-image-hero-2.jpg"
-              media="(min-width: 900px)"
-            />
-
-            <img
-              src="./images/mobile-image-hero-2.jpg"
-              alt=""
-              aria-labelledby="hero__details--title-2"
-              aria-describedby="hero__details--description-2"
-            />
-          </picture>
-        </div>
-
-        <div class="hero-image__item" id="hero-image-3">
-          <picture>
-            <source
-              srcset="./images/desktop-image-hero-3.jpg"
-              media="(min-width: 900px)"
-            />
-
-            <img
-              src="./images/mobile-image-hero-3.jpg"
-              alt=""
-              aria-labelledby="hero__details--title-3"
-              aria-describedby="hero__details--description-3"
-            />
-          </picture>
-        </div>
-
-        <div class="hero-image__navigation">
-          <button
-            type="button"
-            class="hero-image__navigation-btn hero-image__navigation-btn--prev"
-            aria-label="Previous image"
+        <div class="hero__details">
+          <div
+            id="hero__details--item-1"
+            class="hero__details--item d-flex flex-column"
           >
-            <img src="./images/icon-angle-left.svg" alt="Previous Slide Icon" />
-          </button>
+            <h2 id="hero__details--title-1" class="hero__details--title">
+              Discover innovative ways to decorate
+            </h2>
+            <p
+              id="hero__details--description-1"
+              class="hero__details--description"
+            >
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life. Create a room in your own style
+              with our collection and make your property a reflection of you and
+              what you love.
+            </p>
+          </div>
 
-          <button
-            type="button"
-            class="hero-image__navigation-btn hero-image__navigation-btn--next"
-            aria-label="Next image"
+          <div
+            id="hero__details--item-2"
+            class="hero__details--item flex-column d-none"
           >
-            <img src="./images/icon-angle-right.svg" alt="Next Slide Icon" />
-          </button>
+            <h2 id="hero__details--title-2" class="hero__details--title">
+              We are available all across the globe
+            </h2>
+            <p
+              id="hero__details--description-2"
+              class="hero__details--description"
+            >
+              With stores all over the world, it's easy for you to find
+              furniture for your home or place of business. Locally, we’re in
+              most major cities throughout the country. Find the branch nearest
+              you using our store locator. Any questions? Don't hesitate to
+              contact us today.
+            </p>
+          </div>
+
+          <div
+            id="hero__details--item-3"
+            class="hero__details--item flex-column d-none"
+          >
+            <h2 id="hero__details--title-3" class="hero__details--title">
+              Manufactured with the best materials
+            </h2>
+            <p
+              id="hero__details--description-3"
+              class="hero__details--description"
+            >
+              Our modern furniture store provide a high level of quality. Our
+              company has invested in advanced technology to ensure that every
+              product is made as perfect and as consistent as possible. With
+              three decades of experience in this industry, we understand what
+              customers want for their home and office.
+            </p>
+          </div>
+
+          <a href="#" class="hero__show-now"
+            >Shop now
+
+            <img
+              class="hero__show-now--arrow"
+              src="./images/icon-arrow.svg"
+              alt=""
+              role="presentation"
+            />
+          </a>
         </div>
       </section>
 
-      <section class="hero__details">
-        <div id="hero__details--item-1" class="hero__details--item">
-          <h2 id="hero__details--title-1" class="hero__details--title">
-            Discover innovative ways to decorate
+      <section class="about-us" aria-labelledby="about-us__title">
+        <figure class="about-us__image-container">
+          <img
+            class="about-us__image"
+            src="./images/image-about-dark.jpg"
+            alt="Furniture in a dark environment"
+            role="presentation"
+          />
+        </figure>
+
+        <div class="about-us__content">
+          <h2 class="about-us__title" id="about-us__title">
+            About our furniture
           </h2>
-          <p
-            id="hero__details--description-1"
-            class="hero__details--description"
-          >
-            We provide unmatched quality, comfort, and style for property owners
-            across the country. Our experts combine form and function in
-            bringing your vision to life. Create a room in your own style with
-            our collection and make your property a reflection of you and what
-            you love.
-          </p>
-        </div>
 
-        <div id="hero__details--item-2" class="hero__details--item">
-          <h2 id="hero__details--title-2" class="hero__details--title">
-            We are available all across the globe
-          </h2>
-          <p
-            id="hero__details--description-2"
-            class="hero__details--description"
-          >
-            With stores all over the world, it's easy for you to find furniture
-            for your home or place of business. Locally, we’re in most major
-            cities throughout the country. Find the branch nearest you using our
-            store locator. Any questions? Don't hesitate to contact us today.
-          </p>
-        </div>
-
-        <div id="hero__details--item-3" class="hero__details--item">
-          <h2 id="hero__details--title-3" class="hero__details--title">
-            Manufactured with the best materials
-          </h2>
-          <p
-            id="hero__details--description-3"
-            class="hero__details--description"
-          >
-            Our modern furniture store provide a high level of quality. Our
-            company has invested in advanced technology to ensure that every
-            product is made as perfect and as consistent as possible. With three
-            decades of experience in this industry, we understand what customers
-            want for their home and office.
-          </p>
-        </div>
-
-        <a href="#">Shop now</a>
-      </section>
-
-      <section class="about-us">
-        <img
-          class="about-us--image"
-          src="./images/image-about-dark.jpg"
-          alt="Furniture in an dark environment"
-        />
-        <div class="about-us--description">
-          <h2>About our furniture</h2>
-
-          <p>
+          <p class="about-us__description">
             Our multifunctional collection blends design and function to suit
             your individual taste. Make each room unique, or pick a cohesive
-            theme that best express your interests and what inspires you. Find
+            theme that best expresses your interests and what inspires you. Find
             the furniture pieces you need, from traditional to contemporary
             styles or anything in between. Product specialists are available to
             help you create your dream space.
           </p>
         </div>
 
-        <img
-          class="about-us--image"
-          src="./images/image-about-light.jpg"
-          alt="Furniture in an light environment"
-        />
+        <figure class="about-us__image-container">
+          <img
+            class="about-us__image"
+            src="./images/image-about-light.jpg"
+            alt="Furniture in a light environment"
+            role="presentation"
+          />
+        </figure>
       </section>
     </main>
     <footer class="footer__attribution">

@@ -153,18 +153,6 @@
 //   @include flex-center;
 // }
 
-@mixin flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @mixin truncate($width: 100%) {
   max-width: $width;
   overflow: hidden;
