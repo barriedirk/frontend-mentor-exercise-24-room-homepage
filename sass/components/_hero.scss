@@ -20,6 +20,7 @@
       object-position: bottom;
       max-height: rem(534);
     }
+    transition: all 4s ease-out;
   }
 
   &-image__navigation {
@@ -53,6 +54,7 @@
 
   &__details--item {
     gap: rem(25);
+    transition: all 4s ease-out;
   }
 
   &__details--title {

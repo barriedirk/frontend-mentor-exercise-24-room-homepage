@@ -8,13 +8,26 @@
 @use "../components/logo" as *;
 
 .menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: rem(110);
   width: 100%;
   padding: 0 rem(20);
-  @include flexRowCenter;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: rem(10);
+
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
 
   &__toggle {
     display: none;
@@ -23,33 +36,36 @@
   &__navigation {
     @include flexRowCenter;
     gap: rem(30);
+    z-index: 10;
   }
 
   &__list {
     list-style-type: none;
     @include flexRowCenter();
-    gap: rem(5);
+    gap: rem(30);
     color: $clr-white;
-  }
 
-  a {
-    position: relative;
-    color: currentColor;
-    text-decoration: none;
+    a {
+      color: currentColor;
+      font-weight: $fw-semibold;
+      font-size: rem(16);
+      letter-spacing: rem(-0.67);
+      text-decoration: none;
 
-    &::after {
-      content: "";
-      display: block;
-      width: 0px;
-      height: 2px;
-      background: transparent;
-      transition: width 0.5s ease, background-color 0.5s;
-    }
+      &::after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 2px;
+        background: transparent;
+        transition: width 0.5s ease, background-color 0.5s;
+      }
 
-    &:hover::after {
-      width: 80%;
-      background-color: currentColor;
-      transform: translateX(10%);
+      &:hover::after {
+        width: 80%;
+        background-color: currentColor;
+        transform: translateX(10%);
+      }
     }
   }
 
@@ -61,8 +77,14 @@
   }
 
   @include respondMaxWidth(phone) {
+    &-logo-link {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     &__toggle {
-      display: inline-block;
+      display: block;
       background: transparent;
       border: none;
       width: rem(20);
@@ -80,10 +102,14 @@
       display: none;
     }
 
-    &.is-expanded {
+    .is-expanded & {
       background-color: $clr-white;
 
-      &-logo-link {
+      .menu__options {
+        display: flex;
+      }
+
+      .menu-logo-link {
         display: none;
       }
 
@@ -93,5 +119,23 @@
         color: $clr-black;
       }
     }
+  }
+
+  @include respondMinWidth(phone) {
+    & {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: rem(50);
+
+      &-logo-link {
+        margin-left: rem(20);
+      }
+    }
+  }
+}
+
+@include respondMaxWidth(phone) {
+  .is-expanded .menu__overlay {
+    display: block;
   }
 }
