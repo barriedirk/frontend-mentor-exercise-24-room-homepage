@@ -50,7 +50,6 @@ const $$ = (selector) => document.querySelectorAll(selector);
     clearTimeout(galleryTimeout);
     $$galleryPictures[galleryIdx].classList.add("d-none");
     $$galleryDestails[galleryIdx].classList.add("d-none");
-    $$galleryPictures[galleryIdx].classList.remove("d-flex");
     $$galleryDestails[galleryIdx].classList.remove("d-flex");
 
     const newIdx = galleryIdx + direction;
@@ -65,10 +64,9 @@ const $$ = (selector) => document.querySelectorAll(selector);
 
     $$galleryPictures[galleryIdx].classList.remove("d-none");
     $$galleryDestails[galleryIdx].classList.remove("d-none");
-    $$galleryPictures[galleryIdx].classList.add("d-flex");
     $$galleryDestails[galleryIdx].classList.add("d-flex");
 
-    changePictureAutomatically();
+    // changePictureAutomatically();
   };
 
   $galleryBtnPrev.addEventListener("click", (evt) => {
@@ -82,5 +80,5 @@ const $$ = (selector) => document.querySelectorAll(selector);
     galleryDirection(GALLERY_DIRECTION.NEXT);
   });
 
-  changePictureAutomatically();
+  // changePictureAutomatically();
 })();
