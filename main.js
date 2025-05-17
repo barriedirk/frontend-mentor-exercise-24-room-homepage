@@ -43,7 +43,7 @@ const $$ = (selector) => document.querySelectorAll(selector);
       galleryDirection(GALLERY_DIRECTION.NEXT);
 
       changePictureAutomatically();
-    }, 3000);
+    }, 10000); // 10 seconds
   };
 
   const galleryDirection = (direction) => {
@@ -66,7 +66,7 @@ const $$ = (selector) => document.querySelectorAll(selector);
     $$galleryDestails[galleryIdx].classList.remove("d-none");
     $$galleryDestails[galleryIdx].classList.add("d-flex");
 
-    // changePictureAutomatically();
+    changePictureAutomatically();
   };
 
   $galleryBtnPrev.addEventListener("click", (evt) => {
@@ -80,5 +80,5 @@ const $$ = (selector) => document.querySelectorAll(selector);
     galleryDirection(GALLERY_DIRECTION.NEXT);
   });
 
-  // changePictureAutomatically();
+  changePictureAutomatically();
 })();

@@ -45,6 +45,7 @@
     color: $clr-white;
 
     a {
+      position: relative;
       color: currentColor;
       font-weight: $fw-semibold;
       font-size: rem(16);
@@ -52,18 +53,19 @@
       text-decoration: none;
 
       &::after {
+        position: absolute;
         content: "";
-        display: block;
-        width: 0px;
-        height: 2px;
-        background: transparent;
-        transition: width 0.5s ease, background-color 0.5s;
+        background-color: currentColor;
+        height: 1px;
+        width: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateY(10px);
+        transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
       }
 
       &:hover::after {
-        width: 80%;
-        background-color: currentColor;
-        transform: translateX(10%);
+        width: 100%;
       }
     }
   }

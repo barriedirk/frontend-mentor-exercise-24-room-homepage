@@ -356,6 +356,7 @@ body > main {
   color: #ffffff;
 }
 .menu__list a {
+  position: relative;
   color: currentColor;
   font-weight: 600;
   font-size: 1rem;
@@ -363,17 +364,18 @@ body > main {
   text-decoration: none;
 }
 .menu__list a::after {
+  position: absolute;
   content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: transparent;
-  transition: width 0.5s ease, background-color 0.5s;
+  background-color: currentColor;
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateY(10px);
+  transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .menu__list a:hover::after {
-  width: 80%;
-  background-color: currentColor;
-  transform: translateX(10%);
+  width: 100%;
 }
 .menu-logo-link img {
   width: 3.8125rem;
@@ -536,16 +538,14 @@ body > main {
   content: "";
   background-color: currentColor;
   height: 1px;
-  left: 50%;
   width: 0;
+  left: 0;
   bottom: 0;
-  transform: translateX(-50%) translateY(10px);
-  transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1), left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateY(10px);
+  transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .hero__show-now:hover::after {
   width: 100%;
-  left: 0;
-  transform: translateY(10px);
 }
 @media only screen and (min-width: 56.25em) {
   .hero {
