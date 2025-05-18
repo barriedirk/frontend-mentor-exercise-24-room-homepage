@@ -171,3 +171,28 @@
   background-size: cover;
   background-position: center center;
 }
+
+@mixin underlineHoverCenter(
+  $color: currentColor,
+  $thickness: 2px,
+  $transition: 0.25s
+) {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: $thickness;
+    bottom: -10px;
+    left: 0;
+    background-color: $color;
+    transition: transform $transition ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(0.85);
+  }
+}

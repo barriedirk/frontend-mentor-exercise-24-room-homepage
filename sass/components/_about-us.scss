@@ -40,7 +40,7 @@
 
   @include respondMinWidth(tab-port) {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
 
     &__image-container {
       flex: 1 1 0;
@@ -49,6 +49,7 @@
     &__image {
       aspect-ratio: 440 / 266;
       max-height: rem(266);
+      height: 100%;
     }
 
     &__title {
@@ -60,7 +61,7 @@
     &__content {
       justify-content: flex-start;
       flex: 0 0 40%;
-      padding: rem(10);
+      padding: rem(30);
     }
   }
 
